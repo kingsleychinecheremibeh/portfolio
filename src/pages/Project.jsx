@@ -42,7 +42,7 @@ const projects = [
 
 const Project = () => {
   return (
-    <section id='project' className='px-6 md:px-16 py-20 bg-950'>
+    <section id='project' className='px-6 md:px-16 py-20 bg-gray-950'>
       <motion.h2
         className='text-3xl font-bold text-white mb-12'
         initial={{ opacity: 0, y: 20 }}
