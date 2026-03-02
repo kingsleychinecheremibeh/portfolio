@@ -1,23 +1,22 @@
 import { Routes, Route } from "react-router-dom";
+import { ThemeProvider } from "./context/ThemeContext.jsx";
 import Navbar from "./components/Navbar.jsx";
 import Home from "./pages/Home.jsx";
-import About from "./pages/About.jsx"
-import Project from "./pages/Project.jsx";
-import Contact from "./pages/Contact.jsx"
-import Footer from "./components/Footer.jsx"
+import NotFound from "./pages/NotFound.jsx";
+import Footer from "./components/Footer.jsx";
 
 const App = () => {
   return (
-    <div>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />}  />
-        <Route path="/about" element={<About />}  />
-        <Route path="/project" element={<Project />}  />
-        <Route path="/contact" element={<Contact />}  />
-      </Routes>
-      <Footer />
-    </div>
+    <ThemeProvider>
+      <div>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+        <Footer />
+      </div>
+    </ThemeProvider>
   )
 }
 
